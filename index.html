@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLMs × Mathematics Seminar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* Base */
+    :root {
+      --brand: #1a73e8;
+      --ink: #333;
+      --muted: #555;
+      --bg: #f8f8f8;
+      --card: #fff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.06);
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--brand);
+      color: #fff;
+      text-align: center;
+      padding: 56px 20px 40px;
+      border-radius: 0 0 12px 12px;
+      box-shadow: var(--shadow);
+    }
+    .hero h1 {
+      font-family: 'Roboto Slab', serif;
+      font-weight: 700;
+      margin: 0 0 12px;
+      letter-spacing: .4px;
+    }
+    .hero p {
+      margin: 0 auto;
+      max-width: 780px;
+      color: #eef3ff;
+      font-size: 18px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 28px auto;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 22px;
+    }
+
+    /* Headings & text */
+    h2, h3 {
+      font-family: 'Roboto Slab', serif;
+      color: var(--brand);
+      margin: 18px 0 12px;
+    }
+    p { color: var(--muted); font-size: 18px; }
+
+    /* Info bar */
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      background: #f4f9ff;
+      border: 1px solid #e3efff;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 14px 0 8px;
+      font-size: 15px;
+    }
+    .meta b { color: #0c47b7; }
+
+    /* Links */
+    a { color: var(--brand); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+
+    /* Table */
+    .schedule-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      min-width: 640px; /* better on small screens */
+    }
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    th, td {
+      padding: 12px 10px;
+      text-align: left;
+      border-bottom: 1px solid #eaeaea;
+      vertical-align: top;
+    }
+    th {
+      background: #f6f6f6;
+      font-weight: 700;
+    }
+    tbody tr:nth-child(even) { background: #fbfbfb; }
+
+    /* Badge for TBA */
+    .tba {
+      display: inline-block;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #fff4cc;
+      border: 1px solid #ffe08a;
+      color: #7a5e00;
+      margin-left: 6px;
+      vertical-align: baseline;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 24px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 720px) {
+      .hero { padding: 42px 18px 28px; }
+      .hero h1 { font-size: 1.6rem; }
+      .hero p { font-size: 16px; }
+      p { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero" role="banner">
+    <h1>LLMs × Mathematics Seminar</h1>
+    <p>Weekly research seminar at Rutgers on the mathematics of (and with) large language models. 
+       <strong>Wednesdays, 2–3 PM</strong>.</p>
+  </header>
+
+  <!-- Main -->
+  <main class="container" role="main">
+    <section aria-labelledby="about">
+      <h2 id="about">About</h2>
+      <div class="meta" aria-label="Seminar logistics">
+        <div><b>Time</b>: Wednesdays, <time datetime="14:00">2:00 PM</time>–<time datetime="15:00">3:00 PM</time></div>
+        <div><b>Location</b>: Hill 423 (unless noted)</div>
+        <div><b>Mailing list</b>: Email <a href="mailto:ayush.khaitan@rutgers.edu">ayush.khaitan@rutgers.edu</a></div>
+      </div>
+      <p>
+        We explore the fast-growing interface between mathematical reasoning, formal methods, 
+        and modern AI systems. Talks range from theory to tooling to case studies in proof and verification.
+      </p>
+    </section>
+
+    <section aria-labelledby="schedule">
+      <h2 id="schedule">Seminar Schedule</h2>
+      <div class="schedule-wrap">
+        <table aria-describedby="sched-note">
+          <caption>Fall 2025</caption>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Speaker</th>
+              <th scope="col">Title / Materials</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- EXAMPLE ROWS — replace/add as you confirm speakers -->
+            <tr>
+              <td><time datetime="2025-09-10">Sep 10, 2025</time></td>
+              <td>TBD<span class="tba">TBA</span></td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td><time datetime="2025-09-17">Sep 17, 2025</time></td>
+              <td>TBD<span class="tba">TBA</span></td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td><time datetime="2025-09-24">Sep 24, 2025</time></td>
+              <td>TBD<span class="tba">TBA</span></td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td><time datetime="2025-10-01">Oct 1, 2025</time></td>
+              <td>TBD<span class="tba">TBA</span></td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td><time datetime="2025-10-08">Oct 8, 2025</time></td>
+              <td>TBD<span class="tba">TBA</span></td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td><time datetime="2025-10-15">Oct 15, 2025</time></td>
+              <td>TBD<span class="tba">TBA</span></td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td><time datetime="2025-10-22">Oct 22, 2025</time></td>
+              <td>TBD<span class="tba">TBA</span></td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td><time datetime="2025-10-29">Oct 29, 2025</time></td>
+              <td>TBD<span class="tba">TBA</span></td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td><time datetime="2025-11-05">Nov 5, 2025</time></td>
+              <td>TBD<span class="tba">TBA</span></td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td><time datetime="2025-11-12">Nov 12, 2025</time></td>
+              <td>TBD<span class="tba">TBA</span></td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td><time datetime="2025-11-19">Nov 19, 2025</time></td>
+              <td>TBD<span class="tba">TBA</span></td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td><time datetime="2025-12-03">Dec 3, 2025</time></td>
+              <td>TBD<span class="tba">TBA</span></td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td><time datetime="2025-12-10">Dec 10, 2025</time></td>
+              <td>TBD<span class="tba">TBA</span></td>
+              <td>TBD</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p id="sched-note" style="margin-top:8px; font-size:14px; color:#777;">
+        Schedule subject to change; check back for abstracts and slides.
+      </p>
+    </section>
+
+    <footer>
+      Organizers: A. Khaitan (Rutgers) · …  
+      | Host: <a href="https://github.com/ai-math-seminar">ai-math-seminar</a> GitHub Pages
+    </footer>
+  </main>
+</body>
+</html>
