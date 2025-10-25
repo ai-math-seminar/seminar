@@ -225,7 +225,7 @@
       <p><b>Abstract.</b> We'll do a "show and tell" of what it's like to try to formalize some basic mathematics in Lean, with help from AI. </p>
 
       <ul class="materials">
-        <li><a href="https://rutgers.zoom.us/rec/play/MIF_HvQPSI21gnVKXEPnXq7C6PwPhCXAbATFYzNrlI7MjLDEpFceGm31RyQD0-EP68-aLwc6fwyPsMIC.z4k3PkG9k0uUKaxl?eagerLoadZvaPages=sidemenu.billing.plan_management&accessLevel=meeting&canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Frutgers.zoom.us%2Frec%2Fshare%2FQwH3qBna_ArS5V2fmepwBnMRMD1qDVuUWW0B0_LtCJcOg-8Ux5YKCgpYQMB-TsGa.Qvpw1sNnOU9NIwHu">Recording</a>, Passcode: g&CcN6n=</li>
+        <li><a href="https://rutgers.zoom.us/rec/play/MIF_HvQPSI21gnVKXEPnXq7C6PwPhCXAbATFYzNrlI7MjLDEpFceGm31RyQD0-EP68-aLwc6fwyPsMIC.z4k3PkG9k0uUKaxl?eagerLoadZvaPages=sidemenu.billing.plan_management&accessLevel=meeting&canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Frutgers.zoom.us%2Frec%2Fshare%2FQwH3qBna_ArS5V2fmepwBnMRMD1qDVuUWW0B0_LtCJcOg-8Ux5YKCgpYQMB-TsGa.Qvpw1sNnOU9NIwHu">Recording</a>, Passcode: g&amp;CcN6n=</li>
       </ul>
     </div>
   </details>
@@ -260,13 +260,28 @@
             </tr>
             <tr>
               <td><time datetime="2025-10-29">Oct 29, 2025</time></td>
-              <td>Tomer Galanti (Texas A&M)</td>
-              <td>TBD</td>
+              <td>Tomer Galanti (Texas A&amp;M)</td>
+              <td>
+                <details class="talk">
+                  <summary>LLM-ERM: Sample-Efficient Program Learning via LLM-Guided Search</summary>
+                  <div class="talk-body">
+                    <p><b>Abstract.</b> We seek algorithms for program learning that are both sample-efficient and computationally feasible. Classical results show that targets admitting short program descriptions (e.g., with short &quot;python code&quot;) can be learned with a &quot;small&quot; number of examples (scaling with the size of the code) via length-first program enumeration, but the search is exponential in description length. Consequently, Gradient-based training avoids this cost yet can require exponentially many samples on certain short-program families.</p>
+                    <p>To address this gap, we introduce LLM-ERM, a propose-and-verify framework that replaces exhaustive enumeration with an LLM-guided search over candidate programs while retaining ERM-style selection on held-out data. Specifically, we draw k candidates with a pretrained reasoning-augmented LLM, compile and check each on the data, and return the best verified hypothesis, with no feedback, adaptivity, or gradients. Theoretically, we show that coordinate-wise online mini-batch SGD requires many samples to learn certain short programs. Empirically, LLM-ERM solves tasks such as parity variants, pattern matching, and primality testing with as few as 200 samples, while SGD-trained transformers overfit even with 100,000 samples. These results indicate that language-guided program synthesis recovers much of the statistical efficiency of finite-class ERM while remaining computationally tractable, offering a practical route to learning succinct hypotheses beyond the reach of gradient-based training.</p>
+                  </div>
+                </details>
+              </td>
             </tr>
             <tr>
               <td><time datetime="2025-11-05">Nov 5, 2025</time></td>
               <td>Ayush Khaitan (Rutgers)</td>
-              <td>A hands-on introduction to the Amarel cluster at Rutgers</td>
+              <td>
+                <details class="talk">
+                  <summary>O-Forge: a verifiable, LLM-driven framework for proving inequalities in research mathematics.</summary>
+                  <div class="talk-body">
+                    <p><b>Abstract.</b> We introduce an LLM + computer software framework for proving sophisticated inequalities in research mathematics. We first ask a frontier LLM to break up a problem into its simplest parts, and then ask a computer algebra system to complete the proof for each part. In doing so, we solve a concrete question posed by Terence Tao. This is joint work with Vijay Ganesh (Georgia Tech).</p>
+                  </div>
+                </details>
+              </td>
             </tr>
             <tr>
               <td><time datetime="2025-11-12">Nov 12, 2025</time></td>
