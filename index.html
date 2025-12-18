@@ -4,386 +4,170 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI and Mathematics Seminar</title>
-
-  <!-- Clean, modern type (Apple-ish feel via system-like sans) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
   <style>
-    /* =========================
-       Design System (Blue/White)
-       ========================= */
-    :root{
+    /* Base */
+    :root {
       --brand: #1a73e8;
-      --brand-deep: #0b57d0;
-      --brand-ink: #0c47b7;
-
-      --ink: #0b1220;
-      --muted: rgba(11,18,32,.72);
-
-      --bg0: #f7fbff;
-      --bg1: #f4f7fb;
-
-      --card: rgba(255,255,255,.86);
-      --card-solid: #ffffff;
-
-      --border: rgba(26,115,232,.14);
-      --border-soft: rgba(11,18,32,.08);
-
-      --shadow: 0 1px 1px rgba(0,0,0,.03),
-                0 10px 30px rgba(0,0,0,.08);
-      --shadow-soft: 0 1px 1px rgba(0,0,0,.03),
-                     0 6px 18px rgba(0,0,0,.06);
-
-      --radius: 18px;
-      --radius-lg: 28px;
-
-      --pad: 28px;
-      --pad-lg: 34px;
-
-      --ease: cubic-bezier(.2,.8,.2,1);
+      --ink: #333;
+      --muted: #555;
+      --bg: #f8f8f8;
+      --card: #fff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.06);
+      --radius: 10px;
     }
-
-    *{ box-sizing: border-box; }
-    html{ scroll-behavior: smooth; }
-    body{
+    * { box-sizing: border-box; }
+    body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Open Sans', sans-serif;
       color: var(--ink);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-
-      /* Smooth, subtle blue glow like modern product pages */
-      background:
-        radial-gradient(1200px 560px at 50% -160px,
-          rgba(26,115,232,.22) 0%,
-          rgba(26,115,232,.10) 35%,
-          rgba(26,115,232,0) 62%),
-        linear-gradient(180deg, var(--bg0), var(--bg1) 45%, var(--bg1));
-    }
-
-    /* =========================
-       Hero
-       ========================= */
-    .hero{
-      position: relative;
-      overflow: hidden;
-      color: #fff;
-      text-align: center;
-      padding: 76px 20px 64px;
-      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-      box-shadow: var(--shadow);
-      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 60%, #0a47b0 100%);
-    }
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset: -140px -240px auto -240px;
-      height: 520px;
-      background:
-        radial-gradient(circle at 50% 35%,
-          rgba(255,255,255,.38) 0%,
-          rgba(255,255,255,.18) 22%,
-          rgba(255,255,255,0) 60%);
-      pointer-events:none;
-      transform: translateY(-10px);
-    }
-    .hero-inner{
-      position: relative;
-      max-width: 920px;
-      margin: 0 auto;
-    }
-    .hero h1{
-      margin: 0 0 10px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      font-size: clamp(2.1rem, 3.4vw, 3.2rem);
-      text-shadow: 0 10px 30px rgba(0,0,0,.16);
-    }
-    .hero p{
-      margin: 0 auto;
-      max-width: 820px;
-      color: rgba(255,255,255,.88);
-      font-size: clamp(1.02rem, 1.15vw, 1.14rem);
-    }
-    .hero strong{
-      color: rgba(255,255,255,.96);
-      font-weight: 700;
-    }
-
-    /* =========================
-       Container
-       ========================= */
-    .container{
-      max-width: 980px;
-      margin: -26px auto 44px; /* slight overlap for “premium” layering */
-      padding: var(--pad-lg);
-      border-radius: var(--radius-lg);
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,.65);
-      box-shadow: var(--shadow);
-    }
-    @supports ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))){
-      .container{
-        backdrop-filter: blur(14px) saturate(160%);
-        -webkit-backdrop-filter: blur(14px) saturate(160%);
-      }
-    }
-
-    /* =========================
-       Headings & text
-       ========================= */
-    h2, h3{
-      margin: 22px 0 12px;
-      color: var(--brand-deep);
-      letter-spacing: -0.01em;
-    }
-    h2{
-      font-size: clamp(1.35rem, 1.4vw, 1.6rem);
-      font-weight: 700;
-    }
-    h3{
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-    p{
-      color: var(--muted);
-      font-size: 1.05rem;
-      margin: 0 0 14px;
-    }
-
-    /* =========================
-       Links (crisp + polished)
-       ========================= */
-    a{
-      color: var(--brand);
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform .15s var(--ease), color .15s var(--ease), opacity .15s var(--ease);
-    }
-    a:hover{ text-decoration: underline; }
-    a:active{ transform: translateY(1px); }
-    a:focus-visible{
-      outline: 3px solid rgba(26,115,232,.35);
-      outline-offset: 3px;
-      border-radius: 8px;
-    }
-
-    /* =========================
-       Info bar (meta)
-       ========================= */
-    .meta{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 12px;
-      padding: 14px 16px;
-      margin: 16px 0 10px;
-
-      border-radius: calc(var(--radius) + 2px);
-      background: rgba(255,255,255,.78);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-    }
-    .meta b{
-      color: var(--brand-ink);
-      font-weight: 700;
-    }
-
-    /* =========================
-       Organizers row
-       ========================= */
-    .organizers{
-      font-size: 0.98rem;
-      color: rgba(11,18,32,.82);
-      margin-top: 8px;
+      background: var(--bg);
       line-height: 1.7;
     }
-    .organizers a{
+
+    /* Hero */
+    .hero {
+      background: var(--brand);
+      color: #fff;
+      text-align: center;
+      padding: 56px 20px 40px;
+      border-radius: 0 0 12px 12px;
+      box-shadow: var(--shadow);
+    }
+    .hero h1 {
+      font-family: 'Roboto Slab', serif;
+      font-weight: 700;
+      margin: 0 0 12px;
+      letter-spacing: .4px;
+    }
+    .hero p {
+      margin: 0 auto;
+      max-width: 780px;
+      color: #eef3ff;
+      font-size: 18px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 28px auto;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 22px;
+    }
+
+    /* Headings & text */
+    h2, h3 {
+      font-family: 'Roboto Slab', serif;
+      color: var(--brand);
+      margin: 18px 0 12px;
+    }
+    p { color: var(--muted); font-size: 18px; }
+
+    /* Info bar */
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      background: #f4f9ff;
+      border: 1px solid #e3efff;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 14px 0 8px;
+      font-size: 15px;
+    }
+    .meta b { color: #0c47b7; }
+
+    /* Organizers row */
+    .organizers {
+      font-size: 16px;
+      color: #444;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+    .organizers a {
       color: inherit;
       text-decoration: none;
-      font-weight: 650;
+      font-weight: 600;
     }
-    .organizers a:hover{ text-decoration: underline; }
-    .organizers a + a::before{
+    .organizers a:hover {
+      text-decoration: underline;
+    }
+    .organizers a + a::before {
       content: " · ";
       white-space: pre;
       font-weight: 400;
-      color: rgba(11,18,32,.42);
+      color: #777;
     }
 
-    /* =========================
-       Semester collapsibles (polished)
-       ========================= */
-    details.semester{
-      margin-top: 16px;
-      border-radius: var(--radius-lg);
-      background: rgba(255,255,255,.80);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-    }
-    details.semester > summary{
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+    /* Links */
+    a { color: var(--brand); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
 
-      padding: 16px 18px;
-      font-weight: 700;
-      color: var(--ink);
-
-      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(238,245,255,.72));
-      border-bottom: 1px solid rgba(26,115,232,.10);
-      transition: background .25s var(--ease);
-    }
-    details.semester > summary::-webkit-details-marker{ display: none; }
-
-    /* Chevron */
-    details.semester > summary::after{
-      content:"";
-      width: 10px;
-      height: 10px;
-      border-right: 2px solid rgba(11,18,32,.55);
-      border-bottom: 2px solid rgba(11,18,32,.55);
-      transform: rotate(-45deg);
-      transition: transform .22s var(--ease), opacity .22s var(--ease);
-      opacity: .85;
-      flex: 0 0 auto;
-      margin-left: 8px;
-    }
-    details.semester[open] > summary::after{
-      transform: rotate(45deg);
-    }
-    details.semester > summary:hover{
-      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(235,244,255,.84));
-    }
-    details.semester > summary:focus-visible{
-      outline: 3px solid rgba(26,115,232,.35);
-      outline-offset: -2px;
-    }
-
-    /* =========================
-       Table (clean, rounded, premium)
-       ========================= */
-    .schedule-wrap{
-      overflow-x: auto;
-      padding: 14px 18px 18px;
-    }
-
-    table{
+    /* Table */
+    .schedule-wrap { overflow-x: auto; }
+    table {
       width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      min-width: 680px;
-
-      background: rgba(255,255,255,.95);
-      border: 1px solid var(--border-soft);
-      border-radius: calc(var(--radius) + 2px);
-      overflow: hidden;
-      box-shadow: 0 1px 1px rgba(0,0,0,.02);
+      border-collapse: collapse;
+      margin-top: 16px;
+      min-width: 640px; /* better on small screens */
     }
-    caption{
+    caption {
       caption-side: top;
       text-align: left;
-      font-weight: 700;
-      color: rgba(11,18,32,.9);
-      padding: 0 2px 10px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
     }
-    thead th{
+    th, td {
+      padding: 12px 10px;
       text-align: left;
-      padding: 14px 14px;
-      font-weight: 700;
-      color: rgba(11,18,32,.88);
-      background: linear-gradient(180deg, #ffffff, #f2f7ff);
-      border-bottom: 1px solid rgba(11,18,32,.08);
-    }
-    tbody td{
-      padding: 14px 14px;
+      border-bottom: 1px solid #eaeaea;
       vertical-align: top;
-      border-bottom: 1px solid rgba(11,18,32,.07);
-      color: rgba(11,18,32,.85);
     }
-    tbody tr:last-child td{ border-bottom: none; }
-    tbody tr:hover{
-      background: rgba(26,115,232,.035);
-    }
-
-    /* =========================
-       Talk details styling (inside table)
-       ========================= */
-    details.talk > summary{
-      cursor: pointer;
-      list-style: none;
+    th {
+      background: #f6f6f6;
       font-weight: 700;
-      color: rgba(11,18,32,.92);
-      letter-spacing: -0.01em;
-      transition: color .18s var(--ease);
     }
-    details.talk > summary::-webkit-details-marker{ display: none; }
-    details.talk > summary:hover{
-      color: var(--brand-deep);
-      text-decoration: underline;
-      text-underline-offset: 3px;
+    tbody tr:nth-child(even) { background: #fbfbfb; }
+
+    /* Badge for TBA */
+    .tba {
+      display: inline-block;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #fff4cc;
+      border: 1px solid #ffe08a;
+      color: #7a5e00;
+      margin-left: 6px;
+      vertical-align: baseline;
     }
 
-    .talk-body{
-      margin-top: 10px;
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(26,115,232,.035);
-      border: 1px solid rgba(26,115,232,.12);
-    }
-    .talk-body p{
-      margin: 0 0 10px;
-      font-size: 1rem;
-    }
-    .talk-body ul{
-      margin: 0;
-      padding-left: 18px;
-    }
-    .talk-body li{
-      margin: 6px 0;
+    /* Footer */
+    footer {
+      margin-top: 24px;
+      font-size: 14px;
+      color: #666;
     }
 
-    /* Footer note */
-    #sched-note{
-      margin-top: 10px;
-      font-size: 0.92rem;
-      color: rgba(11,18,32,.55);
-    }
-
-    /* =========================
-       Responsive tweaks
-       ========================= */
-    @media (max-width: 720px){
-      .hero{ padding: 56px 18px 46px; }
-      .container{
-        margin: -18px 12px 28px;
-        padding: 22px 18px;
-        border-radius: 22px;
-      }
-      p{ font-size: 1rem; }
-      .schedule-wrap{ padding: 12px 12px 14px; }
-      thead th, tbody td{ padding: 12px 12px; }
+    /* Responsive tweaks */
+    @media (max-width: 720px) {
+      .hero { padding: 42px 18px 28px; }
+      .hero h1 { font-size: 1.6rem; }
+      .hero p { font-size: 16px; }
+      p { font-size: 16px; }
     }
   </style>
 </head>
-
 <body>
 
   <!-- Hero -->
   <header class="hero" role="banner">
-    <div class="hero-inner">
-      <h1>AI and Mathematics Seminar</h1>
-      <p>
-        Weekly research seminar at Rutgers on the use of Lean and other AI methods in Mathematics research.
-        <strong>Wednesdays, 10–11 AM</strong>.
-      </p>
-    </div>
+    <h1>AI and Mathematics Seminar</h1>
+    <p>Weekly research seminar at Rutgers on the use of Lean and other AI methods in Mathematics research.
+       <strong>Wednesdays, 10–11 AM</strong>.</p>
   </header>
 
   <!-- Main -->
@@ -401,8 +185,7 @@
 
       <p>
         The seminar explores the fast-growing interface between mathematical reasoning, formal methods,
-        and modern AI systems. It is co-organized by DIMACS and the Mathematics Department at Rutgers University, New Brunswick.
-        <a href="https://www.youtube.com/@ai_and_math_seminar">Here</a> is the YouTube channel for the talks in this seminar.
+        and modern AI systems. It is co-organized by DIMACS and the Mathematics Department at Rutgers University, New Brunswick. <a href="https://www.youtube.com/@ai_and_math_seminar">Here</a> is the YouTube channel for the talks in this seminar.
       </p>
 
       <h3>Organizers</h3>
@@ -439,13 +222,15 @@
                 <td>Alex Kontorovich (Rutgers)</td>
                 <td>
                   <details class="talk">
-                    <summary>An Introduction to Lean + AI for Research Mathematicians</summary>
+                    <summary>
+                      An Introduction to Lean + AI for Research Mathematicians
+                    </summary>
+
                     <div class="talk-body">
                       <p><b>Abstract.</b> We'll do a "show and tell" of what it's like to try to formalize some basic mathematics in Lean, with help from AI.</p>
+
                       <ul class="materials">
-                        <li>
-                          <a href="https://rutgers.zoom.us/rec/play/MIF_HvQPSI21gnVKXEPnXq7C6PwPhCXAbATFYzNrlI7MjLDEpFceGm31RyQD0-EP68-aLwc6fwyPsMIC.z4k3PkG9k0uUKaxl?eagerLoadZvaPages=sidemenu.billing.plan_management&amp;accessLevel=meeting&amp;canPlayFromShare=true&amp;from=share_recording_detail&amp;continueMode=true&amp;componentName=rec-play&amp;originRequestUrl=https%3A%2F%2Frutgers.zoom.us%2Frec%2Fshare%2FQwH3qBna_ArS5V2fmepwBnMRMD1qDVuUWW0B0_LtCJcOg-8Ux5YKCgpYQMB-TsGa.Qvpw1sNnOU9NIwHu">Recording</a>, Passcode: g&amp;CcN6n=
-                        </li>
+                        <li><a href="https://rutgers.zoom.us/rec/play/MIF_HvQPSI21gnVKXEPnXq7C6PwPhCXAbATFYzNrlI7MjLDEpFceGm31RyQD0-EP68-aLwc6fwyPsMIC.z4k3PkG9k0uUKaxl?eagerLoadZvaPages=sidemenu.billing.plan_management&amp;accessLevel=meeting&amp;canPlayFromShare=true&amp;from=share_recording_detail&amp;continueMode=true&amp;componentName=rec-play&amp;originRequestUrl=https%3A%2F%2Frutgers.zoom.us%2Frec%2Fshare%2FQwH3qBna_ArS5V2fmepwBnMRMD1qDVuUWW0B0_LtCJcOg-8Ux5YKCgpYQMB-TsGa.Qvpw1sNnOU9NIwHu">Recording</a>, Passcode: g&amp;CcN6n=</li>
                       </ul>
                     </div>
                   </details>
@@ -462,7 +247,9 @@
                       <p><b>Abstract.</b> In this talk, I’ll provide an overview of some advancements in AI and machine learning in proof assistant languages, such as Lean, Rocq, and Isabelle/HOL. I’ll discuss both neural and symbolic techniques for various proof assistant tasks, including automated proof synthesis, autoformalization, premise selection, and lemma conjecturing. With respect to neural techniques, I’ll cover the basics of applying language models, reinforcement learning, and graph neural networks to the theorem proving domain.</p>
                       <ul class="materials">
                         <li>
-                          <a href="https://rutgers.zoom.us/rec/share/LmP4iRzza6wbnfea--sPW5JFF-GjMr9zcA-ulPunSEEfkr4xAroIXYWuXFi76rrQ.OheCwT0BlSvCZG3Z?startTime=1760551188000">Recording</a>, Passcode: v8c%A!&amp;8
+                          <a href="https://rutgers.zoom.us/rec/share/LmP4iRzza6wbnfea--sPW5JFF-GjMr9zcA-ulPunSEEfkr4xAroIXYWuXFi76rrQ.OheCwT0BlSvCZG3Z?startTime=1760551188000">
+                            Recording
+                          </a>, Passcode: v8c%A!&amp;8
                         </li>
                       </ul>
                     </div>
@@ -475,10 +262,15 @@
                 <td>Chi Jin (Princeton)</td>
                 <td>
                   <details class="talk">
-                    <summary>Goedel-Prover-V2: The Strongest Open-Source Theorem Prover to Date</summary>
+                    <summary>
+                      Goedel-Prover-V2: The Strongest Open-Source Theorem Prover to Date
+                    </summary>
+
                     <div class="talk-body">
                       <p><b>Abstract.</b> This talk introduces Goedel-Prover-V2, an open-source model that sets a new state of the art in automated theorem proving.</p>
-                      <ul class="materials"></ul>
+
+                      <ul class="materials">
+                      </ul>
                     </div>
                   </details>
                 </td>
@@ -531,7 +323,7 @@
                   <details class="talk">
                     <summary>Auto-formalization via Joint Embeddings</summary>
                     <div class="talk-body">
-                      <p><b>Abstract.</b> In recent years we have witnessed a symbiotic trend wherein LLMs are being combined with provers, solvers, and computer algebra systems, resulting in dramatic breakthroughs in AI for math. Following this trend, we have developed two lines of work in my research group. The first is the idea that &quot;good&quot; joint embeddings (JE) can dramatically improve the efficacy of LLM-based auto-formalization tools. We say that such JEs are good if they respect the following invariant: semantically-equivalent formally-dissimilar objects (e.g., pairs of semantically-equivalent natural and formal language proofs) must be &quot;close by&quot; in the embedding space, and semantically inequivalent ones &quot;far apart&quot;. We use such JE models as part of a successful RAG-based auto-formalization pipeline, demonstrating that such JEs are a critical AI-for-math technology. The second idea is Reinforcement Learning with Symbolic Feedback (RLSF), a class of techniques that addresses the LLM hallucination problem in contexts where we have access to rich symbolic feedback such as math, physics, and code, demonstrating that they too are critical to the success of AI for math.</p>
+                      <p><b>Abstract.</b> In recent years we have witnessed a symbiotic trend wherein LLMs are being combined with provers, solvers, and computer algebra systems, resulting in dramatic breakthroughs in AI for math. Following this trend, we have developed two lines of work in my research group. The first is the idea that &quot;good&quot; joint embeddings (JE) can dramatically improve the efficacy of LLM-based auto-formalization tools. We say that JEs are good if they respect the following invariant: semantically-equivalent formally-dissimilar objects (e.g., pairs of semantically-equivalent natural and formal language proofs) must be &quot;close by&quot; in the embedding space, and semantically inequivalent ones &quot;far apart&quot;. We use such JE models as part of a successful RAG-based auto-formalization pipeline, demonstrating that such JEs are a critical AI-for-math technology. The second idea is Reinforcement Learning with Symbolic Feedback (RLSF), a class of techniques that addresses the LLM hallucination problem in contexts where we have access to rich symbolic feedback such as math, physics, and code, demonstrating that they too are critical to the success of AI for math.</p>
                     </div>
                   </details>
                 </td>
@@ -562,6 +354,7 @@
                   </details>
                 </td>
               </tr>
+
             </tbody>
           </table>
         </div>
@@ -617,7 +410,7 @@
                 <td></td>
               </tr>
 
-              <!-- Spring Recess includes Wed, Mar 18, 2026 (intentionally omitted) -->
+              <!-- Spring Recess (no classes) includes Wed, Mar 18, 2026 -->
 
               <tr>
                 <td><time datetime="2026-03-25">Mar 25, 2026</time></td>
@@ -654,7 +447,7 @@
         </div>
       </details>
 
-      <p id="sched-note">
+      <p id="sched-note" style="margin-top:8px; font-size:14px; color:#777;">
         Schedule subject to change; check back for abstracts and slides.
       </p>
     </section>
