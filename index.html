@@ -145,6 +145,21 @@
       vertical-align: baseline;
     }
 
+    /* Placeholder text for unannounced talks */
+    .tbd {
+      color: #9aa0a6;
+      font-style: italic;
+    }
+
+    /* Semester note (e.g. recess weeks) */
+    .recess td {
+      background: #fafafa;
+      color: #888;
+      font-size: 14px;
+      font-style: italic;
+      text-align: center;
+    }
+
     /* Footer */
     footer {
       margin-top: 24px;
@@ -191,9 +206,9 @@
       <h3>Organizers</h3>
       <p class="organizers">
         <a href="https://sites.math.rutgers.edu/~carbonel/">Lisa Carbone</a>
+        <a href="https://stevenecreech.github.io/">Steven Creech</a>
         <a href="https://efirst.github.io">Emily First</a>
         <a href="http://ian.jauslin.org">Ian Jauslin</a>
-        <a href="https://ayushkhaitanrutgers.github.io">Ayush Khaitan</a>
         <a href="https://sites.math.rutgers.edu/~alexk/">Alex Kontorovich</a>
         <a href="https://sites.math.rutgers.edu/~mischaik/">Konstantin Mischaikow</a>
         <a href="https://people.cs.rutgers.edu/~lirong.xia/">Lirong Xia</a>
@@ -203,7 +218,165 @@
     <section aria-labelledby="schedule">
       <h2 id="schedule">Seminar Schedule</h2>
 
-      <!-- Fall 2025 (full info preserved, now collapsible) -->
+      <!-- Fall 2026 -->
+      <details class="semester" open>
+        <summary><strong>Fall 2026</strong></summary>
+        <div class="schedule-wrap">
+          <table aria-describedby="sched-note">
+            <caption>Fall 2026</caption>
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Speaker</th>
+                <th scope="col">Title / Materials</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><time datetime="2026-09-09">Sep 9, 2026</time></td>
+                <td class="tbd">TBD</td>
+                <td><span class="tba">TBA</span></td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-09-16">Sep 16, 2026</time></td>
+                <td class="tbd">TBD</td>
+                <td><span class="tba">TBA</span></td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-09-23">Sep 23, 2026</time></td>
+                <td class="tbd">TBD</td>
+                <td><span class="tba">TBA</span></td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-09-30">Sep 30, 2026</time></td>
+                <td class="tbd">TBD</td>
+                <td><span class="tba">TBA</span></td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-10-07">Oct 7, 2026</time></td>
+                <td class="tbd">TBD</td>
+                <td><span class="tba">TBA</span></td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-10-14">Oct 14, 2026</time></td>
+                <td class="tbd">TBD</td>
+                <td><span class="tba">TBA</span></td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-10-21">Oct 21, 2026</time></td>
+                <td class="tbd">TBD</td>
+                <td><span class="tba">TBA</span></td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-10-28">Oct 28, 2026</time></td>
+                <td class="tbd">TBD</td>
+                <td><span class="tba">TBA</span></td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-11-04">Nov 4, 2026</time></td>
+                <td class="tbd">TBD</td>
+                <td><span class="tba">TBA</span></td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-11-11">Nov 11, 2026</time></td>
+                <td class="tbd">TBD</td>
+                <td><span class="tba">TBA</span></td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-11-18">Nov 18, 2026</time></td>
+                <td class="tbd">TBD</td>
+                <td><span class="tba">TBA</span></td>
+              </tr>
+
+              <!-- Thanksgiving recess: no meeting Wed, Nov 25, 2026 -->
+              <tr class="recess">
+                <td colspan="3">No seminar — Thanksgiving recess (Nov 25)</td>
+              </tr>
+
+              <tr>
+                <td><time datetime="2026-12-02">Dec 2, 2026</time></td>
+                <td class="tbd">TBD</td>
+                <td><span class="tba">TBA</span></td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-12-09">Dec 9, 2026</time></td>
+                <td class="tbd">TBD</td>
+                <td><span class="tba">TBA</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <!-- Spring 2026 -->
+      <details class="semester">
+        <summary><strong>Spring 2026</strong></summary>
+        <div class="schedule-wrap">
+          <table aria-describedby="sched-note">
+            <caption>Spring 2026</caption>
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Speaker</th>
+                <th scope="col">Title / Materials</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td><time datetime="2026-02-04">Feb 4, 2026</time></td>
+                <td>Kevin Buzzard (Imperial College)</td>
+                <td>What is the point of formalisation?</td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-03-04">Mar 4, 2026</time></td>
+                <td>Andrew Head (University of Pennsylvania)</td>
+                <td>Designing Interactive Partners for Proof</td>
+              </tr>
+
+              <!-- Spring Recess (no classes) includes Wed, Mar 18, 2026 -->
+
+              <tr>
+                <td><time datetime="2026-03-25">Mar 25, 2026</time></td>
+                <td>Abhinav Verma (Penn State)</td>
+                <td>Towards Learning a Metric for Mathematical Interestingness</td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-04-01">Apr 1, 2026</time></td>
+                <td>Gabriel Poesia (Harvard)</td>
+                <td>From solving formal systems to building theories (and back)</td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-04-08">Apr 8, 2026</time></td>
+                <td>Eric Rodriguez (Harmonic)</td>
+                <td>Searching for (formal) proofs</td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-04-15">Apr 15, 2026</time></td>
+                <td>Joe Stubbs (UT Austin)</td>
+                <td>Automated Formalization of OEIS using the Sequencelib Platform</td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-04-15">Apr 15, 2026</time></td>
+                <td>Water Moreira (Independent researcher)</td>
+                <td>Sequencelib: A Platform for Formalizing the OEIS</td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-04-22">Apr 22, 2026</time></td>
+                <td>Bennett Chow (UCSD)</td>
+                <td>Some Questions About AI and Mathematics</td>
+              </tr>
+              <tr>
+                <td><time datetime="2026-04-29">Apr 29, 2026</time></td>
+                <td>Jared Duker Lichtman (Stanford)</td>
+                <td>Mathematical reflections on recent progress</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <!-- Fall 2025 -->
       <details class="semester">
         <summary><strong>Fall 2025</strong></summary>
         <div class="schedule-wrap">
@@ -360,76 +533,8 @@
         </div>
       </details>
 
-      <!-- Spring 2026 (dates only; speaker/title/materials empty) -->
-      <details class="semester" open>
-        <summary><strong>Spring 2026</strong></summary>
-        <div class="schedule-wrap">
-          <table aria-describedby="sched-note">
-            <caption>Spring 2026</caption>
-            <thead>
-              <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Speaker</th>
-                <th scope="col">Title / Materials</th>
-              </tr>
-            </thead>
-            <tbody>
-        
-              <tr>
-                <td><time datetime="2026-02-04">Feb 4, 2026</time></td>
-                <td>Kevin Buzzard (Imperial College) </td>
-                <td>What is the point of formalisation?</td>
-              </tr>
-              <tr>
-                <td><time datetime="2026-03-04">Mar 4, 2026</time></td>
-                <td>Andrew Head (University of Pennsylvania) </td>
-                <td>Designing Interactive Partners for Proof </td>
-              </tr>
-
-              <!-- Spring Recess (no classes) includes Wed, Mar 18, 2026 -->
-
-              <tr>
-                <td><time datetime="2026-03-25">Mar 25, 2026</time></td>
-                <td>Abhinav Verma (Penn State)</td>
-                <td>Towards Learning a Metric for Mathematical Interestingness</td>
-              </tr>
-              <tr>
-                <td><time datetime="2026-04-01">Apr 1, 2026</time></td>
-                <td>Gabriel Poesia (Harvard) </td>
-                <td>From solving formal systems to building theories (and back)</td>
-              </tr>
-              <tr>
-                <td><time datetime="2026-04-08">Apr 8, 2026</time></td>
-                <td>Eric Rodriguez (Harmonic)</td>
-                <td>Searching for (formal) proofs</td>
-              </tr>
-              <tr>
-                <td><time datetime="2026-04-15">Apr 15, 2026</time></td>
-                <td> Joe Stubbs (UT Austin)</td>
-                <td>Automated Formalization of OEIS using the Sequencelib Platform</td>
-              </tr>
-              <tr>
-                <td><time datetime="2026-04-15">Apr 15, 2026</time></td>
-                <td>Water Moreira (Independent researcher) </td>
-                <td>Sequencelib: A Platform for Formalizing the OEIS</td>
-              </tr>
-              <tr>
-                <td><time datetime="2026-04-22">Apr 22, 2026</time></td>
-                <td> Bennett Chow (UCSD) </td>
-                <td>Some Questions About AI and Mathematics</td>
-              </tr>
-              <tr>
-                <td><time datetime="2026-04-29">Apr 29, 2026</time></td>
-                <td> Jared Duker Lichtman (Stanford)</td>
-                <td>Mathematical reflections on recent progress</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
-
       <p id="sched-note" style="margin-top:8px; font-size:14px; color:#777;">
-        Schedule subject to change; check back for abstracts and slides.
+        Schedule subject to change; check back for speakers, abstracts, and slides.
       </p>
     </section>
 
